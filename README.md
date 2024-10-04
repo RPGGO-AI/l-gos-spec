@@ -1,5 +1,6 @@
 # General LLM-based Game Open Schema (L-GOS)
 
+![Goose](https://github.com/user-attachments/assets/dc2c4123-1729-4065-ac26-bec60ad0a22b)
 
 I pronunce 'L-GOS' as "Large Goose" :)
 
