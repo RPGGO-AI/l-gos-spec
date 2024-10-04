@@ -14,12 +14,13 @@ Only with the support of more and more third-party platforms can a truly decentr
 
 ## 📂 Repo Structure
 
-- [./README.md](./README.md): This document. An explanation of what L-GOS proposes, and the thinking behind the schema.
-- [./Module.md](./schema/Module.md): Spec for Module. 
-- [./Character.md](./schema/Character.md): Spec for Character. 
-- [General discussion](https://github.com/RPGGO-AI/l-gos-spec/issues/1)
-
-
+L-GOS-SPEC/ <br>
+├── [keyword_definitions.md](./keyword_definitions.md)    # Some definitions of the keywords used in the spec <br>
+├── [schema_v1](./schema_v1/)/                            # V1 Schema folder <br>
+│   ├── [module_v1.md](./schema_v1/module_v1.md)          # Spec for Module.  <br>
+│   └── [character_v1.md](./schema_v1/character_v1.md)    # Spec for Character. <br>
+├── [README.md](./README.md)                              # This document. An explanation of what L-GOS proposes, and the thinking behind the schema. <br>
+└── [LICENSE](./LICENSE)                                  # The license of the project <br>
 
 ## 📑 Introduction
 
