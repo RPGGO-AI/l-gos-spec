@@ -1,5 +1,9 @@
 # General LLM-based Game Open Schema (L-GOS)
 
+
+I pronunce 'L-GOS' as "Large Goose" :)
+
+
 The vision of RPGGO is to democratize game creation together with UGC creators. This means that UGC creators have full copyright ownership of their games and the freedom to transfer them to any third-party platform.
 
 This project aims to define an open data schema that any third-party LLM gaming platform can easily support and be compatible with. This way, UGC game creators can import and run their games on any third-party LLM gaming platform.
@@ -15,11 +19,12 @@ Only with the support of more and more third-party platforms can a truly decentr
 ## 📂 Repo Structure
 
 L-GOS-SPEC/ <br>
-├── [keyword_definitions.md](./keyword_definitions.md)    # Some definitions of the keywords used in the spec <br>
 ├── [schema_v1](./schema_v1/)/                            # V1 Schema folder <br>
 │   ├── [module_v1.md](./schema_v1/module_v1.md)          # Spec for Module.  <br>
 │   └── [character_v1.md](./schema_v1/character_v1.md)    # Spec for Character. <br>
-├── [README.md](./README.md)                              # This document. An explanation of what L-GOS proposes, and the thinking behind the schema. <br>
+├── [compatible_with_sillytavern_card.md](./compatible_with_sillytavern_card.md)    # How it compatible with existing sillytavern cards <br>
+├── [keyword_definitions.md](./keyword_definitions.md)    # Some definitions of the keywords used in the spec <br>
+├── [README.md](./README.md)                              # An explanation of what L-GOS proposes, and the thinking behind the schema. <br>
 └── [LICENSE](./LICENSE)                                  # The license of the project <br>
 
 ## 📑 Introduction
