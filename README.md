@@ -28,6 +28,8 @@ Briefly, the schema contains 3 levels:
 - Character, the data structure for runnig a single character with LLM. One character can contain many modules
 - Module, like Lego blocks, designed to enhance the expression and performance of characters and the game itself.
 
+![whiteboard_exported_image (11)](https://github.com/user-attachments/assets/0f9de6a9-1671-4eb6-91c4-2588aba9aa75)
+
 
 
 ## ⚖️ License
