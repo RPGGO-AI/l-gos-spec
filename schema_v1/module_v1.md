@@ -41,7 +41,7 @@ type Module = {
 
 or as this python definition:
 
-```javascript
+```python
 class Entry(BaseModel):
         content: str
         keys: list[str]
@@ -63,7 +63,6 @@ Details for each field follows.
 ### `name`
 
 Used to identify a module.
-
 
 ### `creator`
 Used to identify the module creator in case he/she wants to be remembered.
