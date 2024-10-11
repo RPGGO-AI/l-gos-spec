@@ -61,15 +61,13 @@ A default value for the module's `name` **MUST** exist.
 Details for each field follows.
 
 ### `name`
-
 Used to identify a module.
 
 ### `creator`
 Used to identify the module creator in case he/she wants to be remembered.
 
 ### `description`
-
-Description of the module. **SHOULD** be included by default in every prompt.
+Description of the module, where creators can include information, and **SHOULD NOT** be used in prompt. 
 
 ### `category`
 Used to identify the usage purpose of a module. It **MUST** be one of the following values:
