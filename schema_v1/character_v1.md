@@ -28,7 +28,6 @@ The current format can be represented as this TypeScript type:
 ```ts
 type CharacterCard = {
     name: string;
-    traits: string[];
     age: string;
     appearance: string;
     background: string;
@@ -36,6 +35,7 @@ type CharacterCard = {
     dialogue_reference: string;
     creator: string;
     creator_notes: string;
+    traits: string[];
     tone: string[];
     tags: string[];
     modules: Module[];
@@ -45,18 +45,18 @@ type CharacterCard = {
 also with Python definition:
 ```python
 class CharacterCard(BaseModel):
-        name: str = ""
-        age: str = ""
-        appearance: str = ""
-        background: str = ""
-        opening_line: str = ""
-        dialogue_reference: str = ""
-        creator: str = ""
-        creator_notes: str = ""
-        traits: list[str] = []
-        tone: list[str] = []
-        tags: list[str] = []
-        modules: list[Module] = []
+    name: str = ""
+    age: str = ""
+    appearance: str = ""
+    background: str = ""
+    opening_line: str = ""
+    dialogue_reference: str = ""                    # delete?
+    creator: str = ""
+    creator_notes: str = ""
+    traits: list[str] = []
+    tone: list[str] = []
+    tags: list[str] = []                            # delete?
+    modules: list[Module] = []
 ```
 
 All fields are mandatory and **MUST** default to the empty string/list, not null or absent/undefined.

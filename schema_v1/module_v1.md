@@ -43,15 +43,15 @@ or as this python definition:
 
 ```python
 class Entry(BaseModel):
-        content: str
-        keys: list[str]
-
+    keys: list[str]
+    content: str
+    
 class Module(BaseModel):
-        name: str
-        creator: str
-        description: str
-        category: str
-        entries: list[Entry]
+    name: str
+    creator: str
+    description: str
+    category: str
+    entries: list[Entry]
 ```
 
 **Note**: All fields are mandatory and **MUST** default to the empty string, not null or absent/undefined.
