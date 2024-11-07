@@ -8,11 +8,17 @@ This exists for reference in case of ambiguity, or for future new implementers.
 - [Embedding methods](#embedding-methods)
 - [Fields](#fields)
   * [name](#name)
-  * [description](#description)
-  * [personality](#personality)
-  * [scenario](#scenario)
-  * [first_mes](#first_mes)
-  * [mes_example](#mes_example)
+  * [avatar](#avatar)
+  * [appearance](#appearance)
+  * [background](#background)
+  * [opening_line](#opening_line)
+  * [creator](#creator)
+  * [creator_notes](#creator_notes)
+  * [intro](#intro)
+  * [traits](#traits)
+  * [tone](#tone)
+  * [tags](#tags)
+  * [modules](#modules)
 
 
 ## Embedding methods
@@ -28,13 +34,13 @@ The current format can be represented as this TypeScript type:
 ```ts
 type CharacterCard = {
     name: string;
-    age: string;
+    avatar: string;
     appearance: string;
     background: string;
     opening_line: string;
-    dialogue_reference: string;
     creator: string;
     creator_notes: string;
+    intro: string;
     traits: string[];
     tone: string[];
     tags: string[];
@@ -46,16 +52,16 @@ also with Python definition:
 ```python
 class CharacterCard(BaseModel):
     name: str = ""
-    age: str = ""
+    avatar: str = ""
     appearance: str = ""
     background: str = ""
     opening_line: str = ""
-    dialogue_reference: str = ""                    # delete?
     creator: str = ""
     creator_notes: str = ""
+    intro: str = ""
     traits: list[str] = []
     tone: list[str] = []
-    tags: list[str] = []                            # delete?
+    tags: list[str] = []                           
     modules: list[Module] = []
 ```
 
@@ -71,58 +77,42 @@ Whether {{user}} and `<USER>` should be replaced inside the `name` field is an *
 
 Details for each field follows.
 
-
-### `name`
-
+### name
 Used to identify a character.
 
-### `traits`
+### avatar
+The URL or path to the character's avatar image.
 
-An Array of adjective words represent the character's personality and trait.
+### appearance
+A description of the character's physical appearance.
 
-### `age`
+### background
+General background information and backstory about the character.
 
-Used to identify the character's age.
+### opening_line
+The character's first line of dialogue, which may be used to establish their persona or guide interaction with the player. **Should** be displayed in the chat interface.
 
-### `appearance`
+### creator
+Identifies the character's creator. This field **may** default to "Anonymous" if not specified.
 
-Used to describe the character's physical looking.
+### creator_notes
+A field for the creator to include additional notes to bot developers.
 
-### `background`
+### intro
+A brief introduction to the character, which could be used to provide a summary of who they are. This field **Should** be displayed to players.
 
-Used to generally describe the character's backstory and additional information.
+### traits
+An array of adjectives that represent the character's personality traits.
 
-### `opening_line`
+### tone
+An array of strings describing the character's tone of speech or manner of expression.
 
-First dialogue of the character, can be used to establish the character's persona or to guide the player's interaction. **SHOULD** be displayed in the chat interface.
+### tags
+An array of strings that represent the character's roleplay features. These may be used for sorting or filtering on the frontend (case-insensitive), but **should not** be used for prompt engineering.
 
-### `dialogue_reference`
+### modules
+An array of modules, like building blocks, designed to enhance the expression and performance of characters in the system.
 
-Sample dialogues to guide the AI's speaking style.
-
-### `creator`
-
-Used to identify the character's creator. This field MAY default to "Anonymous".
-
-### `creator_notes`
-
-A field where creators can include information.
-
-### `tone`
-
-An Array of Strings representing the character's tone of speech.
-
-### `tags`
-
-An array of strings, representing the character's roleplay feature, with no restrictions.
-
-This field **MAY** be used for frontend sorting/filtering purposes (case-insensitive recommended).
-
-This field **SHOULD NOT** be used for the prompt engineering.
-
-### `modules`
-
-An array of modules like Lego blocks, designed to enhance the expression and performance of characters.
 
 [Further Check on module](./module_v1.md)
 

@@ -9,9 +9,10 @@ This exists for reference in case of ambiguity, or for future new implementers.
 - [Fields](#fields)
   * [name](#name)
   * [creator](#creator)
-  * [description](#description)
+  * [intro](#intro)
   * [category](#category)
   * [entries](#entries)
+  * [cover_image](#cover_image)
 
 
 ## Embedding methods
@@ -33,8 +34,9 @@ type Entry = {
 type Module = {
     name: string;
     creator: string;
-    description: string;
+    intro: string;
     category: string
+    cover_image: string;
     entries: Entry[];
 };
 ```
@@ -49,8 +51,9 @@ class Entry(BaseModel):
 class Module(BaseModel):
     name: str
     creator: str
-    description: str
+    intro: str
     category: str
+    cover_image: str
     entries: list[Entry]
 ```
 
@@ -66,11 +69,14 @@ Used to identify a module.
 ### `creator`
 Used to identify the module creator in case he/she wants to be remembered.
 
-### `description`
+### `intro`
 Description of the module, where creators can include information, and **SHOULD NOT** be used in prompt. 
 
 ### `category`
 Used to identify the usage purpose of a module. It **MUST** be one of the following values:
+
+### `cover_image`
+The URL or path to the Module's cover image.
 
 ```ts
 enum Module_Category {
