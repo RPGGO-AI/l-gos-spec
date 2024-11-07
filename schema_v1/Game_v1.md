@@ -71,7 +71,7 @@ or as this python definition:
 ```python
 class Chapter(BaseModel):
     name: str
-    image: str
+    image: str                # necessary?
     background: str
     goals: list[Goal]         # what should we do about the goals?
     intro: str
@@ -83,13 +83,13 @@ class Game(BaseModel):
     category: str             # abandoned here?
     game_tags: list[str]
     mechanics: str            # limited choices?
-    image: str
+    image: str                # poster? should each field name of image be aligned? 
     lang: str
     background: str
     intro: str                # this is part of prompt, different from field at character/module card
     chapters: list[Chapter]
     worlds: list[World]       # There are worlds? too complex?
-    moderation_level: str
+    moderation_level: str     # abandoned?
     background_musics: str
 ```
 
