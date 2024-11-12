@@ -12,7 +12,7 @@ This exists for reference in case of ambiguity, or for future new implementers.
   * [intro](#intro)
   * [category](#category)
   * [entries](#entries)
-  * [cover_image](#cover_image)
+  * [module_cover](#module_cover)
 
 
 ## Embedding methods
@@ -36,7 +36,7 @@ type Module = {
     creator: string;
     intro: string;
     category: string
-    cover_image: string;
+    module_cover: string;
     entries: Entry[];
 };
 ```
@@ -53,7 +53,7 @@ class Module(BaseModel):
     creator: str
     intro: str
     category: str
-    cover_image: str
+    module_cover: str
     entries: list[Entry]
 ```
 
@@ -70,12 +70,12 @@ Used to identify a module.
 Used to identify the module creator in case he/she wants to be remembered.
 
 ### `intro`
-Description of the module, where creators can include information, and **SHOULD NOT** be used in prompt. 
+Introduction of the module, where creators can include information to player, and **SHOULD NOT** be used in prompt. 
 
 ### `category`
 Used to identify the usage purpose of a module. It **MUST** be one of the following values:
 
-### `cover_image`
+### `module_cover`
 The URL or path to the Module's cover image.
 
 ```ts

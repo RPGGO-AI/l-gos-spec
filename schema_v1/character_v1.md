@@ -77,40 +77,40 @@ Whether {{user}} and `<USER>` should be replaced inside the `name` field is an *
 
 Details for each field follows.
 
-### name
+### `name`
 Used to identify a character.
 
-### avatar
+### `avatar`
 The URL or path to the character's avatar image.
 
-### appearance
+### `appearance`
 A description of the character's physical appearance.
 
-### background
+### `background`
 General background information and backstory about the character.
 
-### opening_line
+### `opening_line`
 The character's first line of dialogue, which may be used to establish their persona or guide interaction with the player. **Should** be displayed in the chat interface.
 
-### creator
+### `creator`
 Identifies the character's creator. This field **may** default to "Anonymous" if not specified.
 
-### creator_notes
+### `creator_notes`
 A field for the creator to include additional notes to bot developers.
 
-### intro
+### `intro`
 A brief introduction to the character, which could be used to provide a summary of who they are. This field **Should** be displayed to players.
 
-### traits
+### `traits`
 An array of adjectives that represent the character's personality traits.
 
-### tone
+### `tone`
 An array of strings describing the character's tone of speech or manner of expression.
 
-### tags
+### `tags`
 An array of strings that represent the character's roleplay features. These may be used for sorting or filtering on the frontend (case-insensitive), but **should not** be used for prompt engineering.
 
-### modules
+### `modules`
 An array of modules, like building blocks, designed to enhance the expression and performance of characters in the system.
 
 
