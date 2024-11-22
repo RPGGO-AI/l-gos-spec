@@ -10,7 +10,8 @@ This exists for reference in case of ambiguity, or for future new implementers.
   - [Chapter Fields](#Chapter)
     * [name](#name)
     * [chapter_poster](#chapter_poster)
-    * [goals](#goals)
+    * [goal_info](#goals)
+    * [statuses](#statuses)
     * [background](#background)
     * [intro](#intro)
     * [endings](#endings)
@@ -39,7 +40,8 @@ The current format can be represented as this TypeScript definition:
 type Chapter = {
     name: string;
     chapter_poster: string;
-    goals: Goal[];
+    goal_info: GoalInfo;
+    statuses: Status[];
     background: string;
     intro: string;
     endings: string;
@@ -64,7 +66,8 @@ or as this python definition:
 class Chapter(BaseModel):
     name: str
     chapter_poster: str                
-    goals: list[Goal]         # what should we do about the goals?
+    goal_info: GoalInfo
+    statuses: list[Status]
     background: str
     intro: str
     endings: str
@@ -95,8 +98,13 @@ The title or name of the chapter.
 #### `chapter_poster`
 A URL or path to an image that visually represents the chapter (e.g., cover art or thematic image).
 
-#### `goals`
-An array of `Goal` objects that define the objectives or missions that the player or characters must accomplish during this chapter.
+#### `goal_info`
+Contains information about the goals for the chapter. This includes two goals which are `success_goal` and `fail_goal`, also `goal_setting` which is a dictionary for meta information for goals.
+[Further Check on GoalInfo](./goal_v1.md)
+
+#### `statuses`
+An array of `Status` objects, representing the numerical values or statuses that are tracked or affected by the chapter's events.
+[Further Check on Status](./goal_v1.md)
 
 #### `background`
 A description of the setting and context for the chapter, potentially outlining the beginning of the events.
