@@ -2,7 +2,7 @@
 
 ![Goose](https://github.com/user-attachments/assets/dc2c4123-1729-4065-ac26-bec60ad0a22b)
 
-I pronunce 'L-GOS' as "Large Goose" :)
+I pronounce 'L-GOS' as "Large Goose" :)
 
 
 The vision of RPGGO is to democratize game creation together with UGC creators. This means that UGC creators have full copyright ownership of their games and the freedom to transfer them to any third-party platform.
@@ -23,7 +23,7 @@ L-GOS-SPEC/ <br>
 ├── [schema_v1](./schema_v1/)/                            # V1 Schema folder <br>
 │   ├── [module_v1.md](./schema_v1/module_v1.md)          # Spec for Module.  <br>
 │   └── [character_v1.md](./schema_v1/character_v1.md)    # Spec for Character. <br>
-├── [compatible_with_sillytavern_card.md](./compatible_with_sillytavern_card.md)    # How it compatible with existing sillytavern cards <br>
+├── [compatible_with_sillytavern_card.md](./compatible_with_sillytavern_card.md)    # How it is compatible with existing sillytavern cards <br>
 ├── [keyword_definitions.md](./keyword_definitions.md)    # Some definitions of the keywords used in the spec <br>
 ├── [README.md](./README.md)                              # An explanation of what L-GOS proposes, and the thinking behind the schema. <br>
 └── [LICENSE](./LICENSE)                                  # The license of the project <br>
@@ -32,7 +32,7 @@ L-GOS-SPEC/ <br>
 
 Briefly, the schema contains 3 levels:
 - Game, the data structure for running a complete game with LLM. One game can contain many characters.
-- Character, the data structure for runnig a single character with LLM. One character can contain many modules
+- Character, the data structure for running a single character with LLM. One character can contain many modules
 - Module, like Lego blocks, designed to enhance the expression and performance of characters and the game itself.
 
 ![whiteboard_exported_image (11)](https://github.com/user-attachments/assets/0f9de6a9-1671-4eb6-91c4-2588aba9aa75)
