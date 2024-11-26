@@ -37,6 +37,8 @@ interface GoalInfo {
 ```
 or as this python definition:
 ```python
+from pydantic import BaseModel, Field
+
 class StatusType(Enum):
     player = "player"
     game = "game"

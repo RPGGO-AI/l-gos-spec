@@ -9,7 +9,7 @@ This exists for reference in case of ambiguity, or for future new implementers.
 - [Fields](#fields)
   - [Chapter Fields](#Chapter)
     * [name](#name)
-    * [chapter_poster](#chapter_poster)
+    * [image_url](#image_url)
     * [goal_info](#goals)
     * [statuses](#statuses)
     * [background](#background)
@@ -19,7 +19,8 @@ This exists for reference in case of ambiguity, or for future new implementers.
   - [Game Fields](#Game)
     * [name](#name)
     * [game_tags](#game_tags)
-    * [game_poster](#game_poster)
+    * [mechanics](#mechanics)
+    * [image_url](#image_url)
     * [lang](#lang)
     * [background](#background)
     * [intro](#intro)
@@ -39,7 +40,7 @@ The current format can be represented as this TypeScript definition:
 ```ts
 type Chapter = {
     name: string;
-    chapter_poster: string;
+    image_url: string;
     goal_info: GoalInfo;
     statuses: Status[];
     background: string;
@@ -51,7 +52,8 @@ type Chapter = {
 type Game = {
     name: string;
     game_tags: string[];
-    game_poster: string;
+    mechanics: string;
+    image_url: string;
     lang: string;
     background: string;
     intro: string;
@@ -63,25 +65,28 @@ type Game = {
 or as this python definition:
 
 ```python
+from pydantic import BaseModel, Field
+
 class Chapter(BaseModel):
-    name: str
-    chapter_poster: str                
-    goal_info: GoalInfo
-    statuses: list[Status]
-    background: str
-    intro: str
-    endings: str
-    characters: list[Character]
+    name: str = ""
+    image_url: str = ""                
+    goal_info: GoalInfo = ""
+    statuses: list[Status] = Field(default_factory=list)
+    background: str = ""
+    intro: str = ""
+    endings: str = ""
+    characters: list[Character] = Field(default_factory=list)
     
 class Game(BaseModel):
-    name: str
-    game_poster: str
-    game_tags: list[str]
-    lang: str
-    background: str
-    intro: str
-    chapters: list[Chapter]
-    background_musics: str
+    name: str = ""
+    image_url: str = ""
+    game_tags: list[str] = Field(default_factory=list)
+    mechanics: str = ""
+    lang: str = ""
+    background: str = ""
+    intro: str = ""
+    chapters: list[Chapter] = Field(default_factory=list)
+    background_musics: list[str] = Field(default_factory=list)
 ```
 
 **Note**: All fields are mandatory and **MUST** default to the empty string, not null or absent/undefined.
@@ -95,7 +100,7 @@ Details for each field follows.
 #### `name`
 The title or name of the chapter.
 
-#### `chapter_poster`
+#### `image_url`
 A URL or path to an image that visually represents the chapter (e.g., cover art or thematic image).
 
 #### `goal_info`
@@ -133,7 +138,20 @@ The title or name of the game.
 #### `game_tags`
 An array of strings that represent tags related to the game, typically used for sorting, categorizing, or filtering. These tags are case-insensitive.
 
-#### `game_poster`
+#### `mechanics`
+Field used to support and implement gameplay mechanics in Algorithm.
+```ts
+enum Mechanics {
+  Adventure = 'Adventure',
+  RolePlay = 'Role-Play',
+  Mystery = 'Mystery',
+  Simulation = 'Simulation',
+  Strategy = 'Strategy',
+  CYOA = 'CYOA'
+};
+```
+
+#### `image_url`
 A URL or path to an image that represents the game, often used for promotional purposes or as a cover image.
 
 #### `lang`
@@ -150,3 +168,5 @@ An array of `Chapter` objects, each representing a specific chapter in the game'
 
 #### `background_musics`
 An array of strings representing background music tracks or themes used in the game. These may be used to set the mood or enhance gameplay.
+
+![game_character](/image/game_character.png)

@@ -1,0 +1,20 @@
+{
+    "name": "Current world setting",
+    "image_url": "xxx",
+    "category": "World Knowledge",
+    "creator": "Anonymous",
+    "entries": [
+        {
+            "keys": ["culture"],
+            "content": "A blend of globalized and localized traditions, where technology, media, and travel allow cultural exchanges to flourish. People are deeply connected through the internet, yet still hold onto regional customs, cuisine, and languages that define their identities."
+        },
+        {
+            "keys": ["Nations"],
+            "content": "Countries exist as political entities with diverse governing systems, economies, and international relations. Power dynamics are shaped by historical alliances, trade agreements, and technological advancements, creating a complex web of diplomacy and conflict."
+        },
+        {
+            "keys": ["Religions"],
+            "content": "Religious diversity is vast, with major world religions coexisting alongside secular beliefs and spiritual practices. Faith plays varying roles in people’s lives, from deeply personal connections to community-driven practices, influencing ethics, traditions, and worldviews."
+        }
+    ]
+}

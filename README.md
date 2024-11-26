@@ -20,12 +20,13 @@ Only with the support of more and more third-party platforms can a truly decentr
 ## 📂 Repo Structure
 
 L-GOS-SPEC/ <br>
-├── [schema_v1](./schema_v1/)/                            # V1 Schema folder <br>
-│   ├── [module_v1.md](./schema_v1/module_v1.md)          # Spec for Module.  <br>
-│   └── [character_v1.md](./schema_v1/character_v1.md)    # Spec for Character. <br>
-├── [compatible_with_sillytavern_card.md](./compatible_with_sillytavern_card.md)    # How it compatible with existing sillytavern cards <br>
-├── [keyword_definitions.md](./keyword_definitions.md)    # Some definitions of the keywords used in the spec <br>
-├── [README.md](./README.md)                              # An explanation of what L-GOS proposes, and the thinking behind the schema. <br>
+├── [schema_v1](./schema_v1/)/                                     # V1 Schema folder <br>
+│   ├── [module_v1.md](./schema_v1/module_v1.md)                               # Spec for Module.  <br>
+│   ├── [character_v1.md](./schema_v1/character_v1.md)    # Spec for Character. <br>
+│   └── [game_v1.md](./schema_v1/game_v1.md)              # Spec for Game. <br>
+├── [compatible_with_sillytavern_card.md](./compatible_with_sillytavern_card.md)            # How it compatible with existing sillytavern cards <br>
+├── [keyword_definitions.md](./keyword_definitions.md)                         # Some definitions of the keywords used in the spec <br>
+├── [README.md](./README.md)                                      # An explanation of what L-GOS proposes, and the thinking behind the schema. <br>
 └── [LICENSE](./LICENSE)                                  # The license of the project <br>
 
 ## 📑 Introduction
@@ -35,8 +36,7 @@ Briefly, the schema contains 3 levels:
 - Character, the data structure for runnig a single character with LLM. One character can contain many modules
 - Module, like Lego blocks, designed to enhance the expression and performance of characters and the game itself.
 
-![whiteboard_exported_image (11)](https://github.com/user-attachments/assets/0f9de6a9-1671-4eb6-91c4-2588aba9aa75)
-
+![game_module](/image/game_module.png)
 
 
 ## ⚖️ License

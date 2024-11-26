@@ -8,7 +8,7 @@ This exists for reference in case of ambiguity, or for future new implementers.
 - [Embedding methods](#embedding-methods)
 - [Fields](#fields)
   * [name](#name)
-  * [avatar](#avatar)
+  * [image_url](#image_url)
   * [appearance](#appearance)
   * [background](#background)
   * [opening_line](#opening_line)
@@ -34,7 +34,7 @@ The current format can be represented as this TypeScript type:
 ```ts
 type CharacterCard = {
     name: string;
-    avatar: string;
+    image_url: string;
     appearance: string;
     background: string;
     opening_line: string;
@@ -50,19 +50,21 @@ type CharacterCard = {
 
 also with Python definition:
 ```python
+from pydantic import BaseModel, Field
+
 class CharacterCard(BaseModel):
     name: str = ""
-    avatar: str = ""
+    image_url: str = ""
     appearance: str = ""
     background: str = ""
     opening_line: str = ""
     creator: str = ""
     creator_notes: str = ""
     intro: str = ""
-    traits: list[str] = []
-    tone: list[str] = []
-    tags: list[str] = []                           
-    modules: list[Module] = []
+    traits: list[str] = Field(default_factory=list)
+    tone: list[str] = Field(default_factory=list)
+    tags: list[str] = Field(default_factory=list)                          
+    modules: list[Module] = Field(default_factory=list)
 ```
 
 All fields are mandatory and **MUST** default to the empty string/list, not null or absent/undefined.
@@ -80,7 +82,7 @@ Details for each field follows.
 ### `name`
 Used to identify a character.
 
-### `avatar`
+### `image_url`
 The URL or path to the character's avatar image.
 
 ### `appearance`
@@ -116,7 +118,7 @@ An array of modules, like building blocks, designed to enhance the expression an
 
 [Further Check on module](./module_v1.md)
 
-![373492583-0f9de6a9-1671-4eb6-91c4-2588aba9aa75](https://github.com/user-attachments/assets/0a67748d-1982-401c-86e4-bf9f013ed2d8)
+![character_module](/image/character_module.png)
 
 
 

@@ -12,7 +12,7 @@ This exists for reference in case of ambiguity, or for future new implementers.
   * [intro](#intro)
   * [category](#category)
   * [entries](#entries)
-  * [module_cover](#module_cover)
+  * [image_url](#image_url)
 
 
 ## Embedding methods
@@ -36,7 +36,7 @@ type Module = {
     creator: string;
     intro: string;
     category: string
-    module_cover: string;
+    image_url: string;
     entries: Entry[];
 };
 ```
@@ -44,17 +44,19 @@ type Module = {
 or as this python definition:
 
 ```python
+from pydantic import BaseModel, Field
+
 class Entry(BaseModel):
-    keys: list[str]
-    content: str
+    keys: list[str] = Field(default_factory=list)
+    content: str = ""
     
 class Module(BaseModel):
-    name: str
-    creator: str
-    intro: str
-    category: str
-    module_cover: str
-    entries: list[Entry]
+    name: str = ""
+    creator: str = ""
+    intro: str = ""
+    category: str = ""
+    image_url: str = ""
+    entries: list[Entry] = Field(default_factory=list)
 ```
 
 **Note**: All fields are mandatory and **MUST** default to the empty string, not null or absent/undefined.
@@ -75,7 +77,7 @@ Introduction of the module, where creators can include information to player, an
 ### `category`
 Used to identify the usage purpose of a module. It **MUST** be one of the following values:
 
-### `module_cover`
+### `image_url`
 The URL or path to the Module's cover image.
 
 ```ts
@@ -114,3 +116,4 @@ some examples of the entry:
 - "resume, profile, childhood": "{{char}} is borned in United States and currently 19 years old, blablabla"
 - "secret, tone": "{{char}} should use a gentle, alluring tone, which makes other feel there are some secrets hided"
 
+![module_entry](/image/module_entry.png)
