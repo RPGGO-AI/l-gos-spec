@@ -115,7 +115,7 @@ Details for each field follows.
 #### `chapter_id`
 A unique identifier for each chapter in the game. The `chapter_id` is generated using a customized **uuidv4()** method, but restricted to **9 characters** for brevity. 
 
-The first 9 characters of a standard uuidv4 string are extracted to serve as the chapter ID. This ensures randomness and avoids collisions while maintaining a concise format.
+The first 9 characters of a standard uuidv4 string are extracted to serve as the chapter ID.
 
 Example: "550e8400e"
 [Check all id rules here](/id_spec.md)
@@ -146,8 +146,8 @@ A description of the potential outcomes or resolutions for the chapter, based on
 This field **Should** be displayed to players and **SHOULD NOT** be used in the prompt.
 
 #### `init_dialogues`
-An array of dialogue objects that define the initial conversations or prompts that players encounter at the start of the chapter. The `Dialogue` structure is defined as follows:
-
+An array of dialogue objects that define the initial conversations that players encounter at the start of the chapter. The `Dialogue` structure is defined as follows:
+This will overwrite the `opening_line` of the character.
 ```ts
 type Dialogue = {
     name: string;              // The speaker or source of the dialogue
@@ -158,11 +158,11 @@ type Dialogue = {
 ```
 
 #### `lore_list`
-An array of `Lore` objects, providing additional narrative details or world-building elements related to the chapter. The `Lore` structure is defined as follows:
+An array of `Lore` objects, providing additional narrative details and game-play elements related to the chapter. The `Lore` structure is defined as follows:
 
 ```ts
 type Lore = {
-    details: string;           // Narrative details or lore text
+    details: string;           // lore text content
     character_id: string[];    // Array of character IDs associated with the lore: "Who knows this lore".
 };
 ```
