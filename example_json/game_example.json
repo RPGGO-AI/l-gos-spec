@@ -70,8 +70,8 @@
                     "personal_setting": ""
                 }
             ],
-            "goals": [...],
             "goal_info": [...],
+            "statuses": [...],
             "endings": "The kids had entered the manor and defeated the ghost! good job everyone! players can now go to the basement formerly guarded by Malcom.",
             "characters": [
                 {
@@ -226,8 +226,8 @@
                     "personal_setting": ""
                 }
             ],
-            "goals": [...],
             "goal_info": [...],
+            "statuses": [...],
             "endings": "You got the Sacred Mars bar! this will unlock the throne room!",
             "characters": [
                 {
@@ -303,7 +303,26 @@
             "cover_url": "",
             "background": "```\nThe Scared Mars Bar glows an otherworldly glow, and then the ground beneath you opens! feels like the three of you falling into eternity, after a while, you land on a pumpkin cloud, softer than aerogel, gentler than cloud, unharmed, you find yourself at the throne chamber of the pumpkin lord! It'ss walls are adorned with carved pumpkins, their grins radiating warmth in the cool night air. \n\n“This is it! We made it!” Max exclaims, his excitement bubbling over. Julia nods, her heart pounding with a mix of nerves and joy. “We’re finally going to meet... whoever that is! I can’t believe it!” \n\nAs they approach the center of the room, the atmosphere shifts. The lights dim, and a gentle breeze sweeps through, carrying with it the scent of autumn and a sense of nostalgia. \n\nThey are, indeed, face to face with the pumpkin lord now.\n```\n***Ask about the poetry and songs of life***\n![alt text](https://cdn-fusion.imgcdn.store/i/2024/0a982836f41cf94e.png)",
             "intro": "",
-            "init_dialogue": [...],
+            "init_dialogue": [
+            {
+                "name": "The Manor Incarnate",
+                "index": 0,
+                "message": "”You have journeyed far, thus I stand before you not just as the Pumpkin Lord but as a guardian of transitions, a herald of endings and new beginnings. Two questions I will answer. candies as rewards I shall give, and nothing more.”\n\n```\nThe grand chamber radiates warmth, illuminated by glowing carved pumpkins that cast playful shadows. At the center stands a magnificent throne entwined with vines and pumpkins, surrounded by tables brimming with candies that tempt the children's senses. The air hums with a magical energy, hinting at the life-changing encounter ahead, as the laughter of unseen spirits fills the room, welcoming them into the Pumpkin Lord's domain.\n```",
+                "character_id": "CQ37T3TR9"
+            },
+            {
+                "name": "Ghostbuster\" Thompson",
+                "index": 1,
+                "message": "“Ayy, look at this place! It’s lit! I can practically taste the best candies in the air! but two questions? man, I'm not so sure, this dude seems to know a lot of important stuff, better not waste or chances, Julia, you are the smart one, you do the talk!”",
+                "character_id": "CBXL5LS17"
+            },
+            {
+                "name": "Olivia \"Witchling\" Alvarez",
+                "index": 2,
+                "message": "“Ah, two questions? forget about the candies Maximilian, I'd love to know if I can meet my sweet bunny Tora ever again! Will you ask this question for me? my sweet darling Julia?“",
+                "character_id": "CY0UBHGSQ"
+            }
+        ],
             "lore_list": [
                 {
                     "details": "Narrative Overview:\nThe final chapter takes place in the heart of the mansion, a grand throne room lit by hundreds of glowing pumpkins. The Pumpkin Lord sits on his throne, waiting for the kids to arrive. His jack-o'-lantern head flickers ominously, but he speaks with a calm, almost welcoming tone. This is the moment where the game becomes more than just trick-or-treating.",
@@ -350,8 +369,8 @@
                     "personal_setting": ""
                 }
             ],
-            "goals": [...],
             "goal_info": [...],
+            "statuses": [...],
             "endings": "After the sermon of life.\n\n“Each Halloween, you carry a piece of this night with you. Remember, the end is but a new beginning. Embrace it.” As he waves his hand, a cascade of candies rains down upon them, filling their bags to the brim. The children are overwhelmed with joy and gratitude, knowing they have experienced something extraordinary. As they prepare to leave the mansion, the Pumpkin Lord’s final words linger in the air: “May your hearts be forever light, and your spirits never dim.”\n\nThe trio steps out into the crisp Halloween night, pockets full of sweets and hearts full of newfound wisdom, knowing they will carry the memory of this adventure with them for years to come.",
             "characters": [
                 {
