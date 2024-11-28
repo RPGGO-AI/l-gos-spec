@@ -7,12 +7,13 @@ This exists for reference in case of ambiguity, or for future new implementers.
 
 - [Embedding methods](#embedding-methods)
 - [Fields](#fields)
+  * [module_id](#module_id)
   * [name](#name)
   * [creator](#creator)
   * [intro](#intro)
   * [category](#category)
   * [entries](#entries)
-  * [image_url](#image_url)
+  * [cover_url](#cover_url)
 
 
 ## Embedding methods
@@ -27,16 +28,18 @@ The current format can be represented as this TypeScript definition:
 
 ```ts
 type Entry = {
+    entry_id: string;
     keys: string[];
     content: string;
 };
 
 type Module = {
+    module_id: string;
     name: string;
     creator: string;
     intro: string;
     category: string
-    image_url: string;
+    cover_url: string;
     entries: Entry[];
 };
 ```
@@ -47,15 +50,17 @@ or as this python definition:
 from pydantic import BaseModel, Field
 
 class Entry(BaseModel):
+    entry_id: str = ""
     keys: list[str] = Field(default_factory=list)
     content: str = ""
     
 class Module(BaseModel):
+    module_id: str = ""
     name: str = ""
     creator: str = ""
     intro: str = ""
     category: str = ""
-    image_url: str = ""
+    cover_url: str = ""
     entries: list[Entry] = Field(default_factory=list)
 ```
 
@@ -64,6 +69,15 @@ class Module(BaseModel):
 A default value for the module's `name` **MUST** exist.
 
 Details for each field follows.
+
+### `module_id`
+A unique identifier for each module. The `module_id` is generated using the following logic:
+
+- **ID_ALPHABET**: A predefined set of characters consisting of `0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ`.
+- The ID **MUST** start with the prefix `M` followed by 8 randomly selected characters from `ID_ALPHABET`.
+
+This ensures uniqueness and immutability across all modules.
+Example: "M1A2B3C4D"
 
 ### `name`
 Used to identify a module.
@@ -77,7 +91,7 @@ Introduction of the module, where creators can include information to player, an
 ### `category`
 Used to identify the usage purpose of a module. It **MUST** be one of the following values:
 
-### `image_url`
+### `cover_url`
 The URL or path to the Module's cover image.
 
 ```ts
@@ -105,7 +119,8 @@ where,
 ### `entries`
 The prompt set to be sent to the AI.
 
-Each entry contains two parts:
+Each entry contains :
+- entry_id, which is a unique identifier for each entry within a module. The `entry_id` is generated using the **nanoid** library with a length of 9 characters. Nanoid generates a compact, random, and URL-friendly ID that minimizes collisions while being concise.
 - keys, which is used as tags to identify the following content, which **MAY** be used for searching
 - content, which is the real prompt. 
 **Note** In prompts sent to the AI, the fields `content` **MUST** replace the following magic strings, with a **case-insensitive** search (e.g. `<BOT>` and `<bot>` both work):

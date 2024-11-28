@@ -7,8 +7,9 @@ This exists for reference in case of ambiguity, or for future new implementers.
 
 - [Embedding methods](#embedding-methods)
 - [Fields](#fields)
+  * [character_id](#character_id)
   * [name](#name)
-  * [image_url](#image_url)
+  * [avatar_url](#avatar_url)
   * [appearance](#appearance)
   * [background](#background)
   * [opening_line](#opening_line)
@@ -33,8 +34,9 @@ The current format can be represented as this TypeScript type:
 
 ```ts
 type CharacterCard = {
+    character_id: string;
     name: string;
-    image_url: string;
+    avatar_url: string;
     appearance: string;
     background: string;
     opening_line: string;
@@ -53,8 +55,9 @@ also with Python definition:
 from pydantic import BaseModel, Field
 
 class CharacterCard(BaseModel):
+    character_id: str = ""
     name: str = ""
-    image_url: str = ""
+    avatar_url: str = ""
     appearance: str = ""
     background: str = ""
     opening_line: str = ""
@@ -79,10 +82,19 @@ Whether {{user}} and `<USER>` should be replaced inside the `name` field is an *
 
 Details for each field follows.
 
+### `character_id`
+A unique identifier for the character. The `character_id` is generated using the following logic:
+
+- **ID_ALPHABET**: A predefined set of characters consisting of `0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ`.
+- The ID **MUST** start with the prefix `C` followed by 8 randomly selected characters from `ID_ALPHABET`.
+
+This ID ensures uniqueness and **MUST** be immutable once assigned.
+example: C4E25YTLT
+
 ### `name`
 Used to identify a character.
 
-### `image_url`
+### `avatar_url`
 The URL or path to the character's avatar image.
 
 ### `appearance`

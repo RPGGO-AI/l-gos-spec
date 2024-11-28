@@ -22,7 +22,7 @@ Only with the support of more and more third-party platforms can a truly decentr
 L-GOS-SPEC/ <br>
 ├── [schema_v1](./schema_v1/)/                                     # V1 Schema folder <br>
 │   ├── [module_v1.md](./schema_v1/module_v1.md)                               # Spec for Module.  <br>
-│   ├── [character_v1.md](./schema_v1/character_v1.md)    # Spec for Character. <br>
+│   ├── [character_v1.md](./schema_v1/character_v1.md)                            # Spec for Character. <br>
 │   └── [game_v1.md](./schema_v1/game_v1.md)              # Spec for Game. <br>
 ├── [compatible_with_sillytavern_card.md](./compatible_with_sillytavern_card.md)            # How it compatible with existing sillytavern cards <br>
 ├── [keyword_definitions.md](./keyword_definitions.md)                         # Some definitions of the keywords used in the spec <br>
