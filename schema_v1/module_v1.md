@@ -79,6 +79,7 @@ A unique identifier for each module. The `module_id` is generated using the foll
 This ensures uniqueness and immutability across all modules.
 Example: "M1A2B3C4D"
 
+[Check all id rules here](/id_spec.md)
 ### `name`
 Used to identify a module.
 

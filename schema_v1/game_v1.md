@@ -51,9 +51,9 @@ type Chapter = {
     goal_info: GoalInfo;
     statuses: Status[];
     endings: string;
-    init_dialogues: InitDialogue[]
-    lore_list: Lore[]
-    character_info: CharacterInfo[]
+    init_dialogues: InitDialogue[];
+    lore_list: Lore[];
+    character_info: CharacterInfo[];
     characters: Character[];   
 };
 
@@ -118,6 +118,7 @@ A unique identifier for each chapter in the game. The `chapter_id` is generated 
 The first 9 characters of a standard uuidv4 string are extracted to serve as the chapter ID. This ensures randomness and avoids collisions while maintaining a concise format.
 
 Example: "550e8400e"
+[Check all id rules here](/id_spec.md)
 
 #### `name`
 The title or name of the chapter.

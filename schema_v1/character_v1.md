@@ -91,6 +91,7 @@ A unique identifier for the character. The `character_id` is generated using the
 This ID ensures uniqueness and **MUST** be immutable once assigned.
 example: C4E25YTLT
 
+[Check all id rules here](/id_spec.md)
 ### `name`
 Used to identify a character.
 
