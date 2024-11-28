@@ -25,7 +25,7 @@ This exists for reference in case of ambiguity, or for future new implementers.
 ## Embedding methods
 
 - .json file with no image. Discouraged for user-friendliness.
-- PNG/APNG: JSON string encoded in base64 inside the "MOD" EXIF metadata field. Highly recommended for better user-friendliness.
+- PNG/APNG: JSON string encoded in base64 inside the "CHAR" EXIF metadata field. Highly recommended for better user-friendliness.
 
 
 ## Fields

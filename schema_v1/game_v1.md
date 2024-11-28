@@ -35,7 +35,7 @@ This exists for reference in case of ambiguity, or for future new implementers.
 ## Embedding methods
 
 - .json file with no image. Discouraged for user-friendliness.
-- PNG/APNG: JSON string encoded in base64 inside the "MOD" EXIF metadata field. Highly recommended for better user-friendliness.
+- PNG/APNG: JSON string encoded in base64 inside the "GAME" EXIF metadata field. Highly recommended for better user-friendliness.
 
 ## Fields
 
@@ -146,12 +146,12 @@ A description of the potential outcomes or resolutions for the chapter, based on
 This field **Should** be displayed to players and **SHOULD NOT** be used in the prompt.
 
 #### `init_dialogues`
-An array of dialogue objects that define the initial conversations that players encounter at the start of the chapter. The `Dialogue` structure is defined as follows:
+An array of InitDialogue objects that define the initial conversations that players encounter at the start of the chapter. The `InitDialogue` structure is defined as follows:
 This will overwrite the `opening_line` of the character.
 ```ts
-type Dialogue = {
+type InitDialogue = {
     name: string;              // The speaker or source of the dialogue
-    index: number;             // The order of the dialogue in the sequence, which **Should* be the display order of frontend.
+    index: number;             // The order of the dialogue in the sequence, which **Should** be the display order of frontend.
     message: string;           // The text content of the dialogue
     character_id: string;      // The unique identifier for the character speaking
 };
