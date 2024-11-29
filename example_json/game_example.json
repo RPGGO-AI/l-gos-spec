@@ -74,7 +74,7 @@
                 "success_goal": {
                     "id": "L0L3MLQ6",
                     "description": "The player has successfully entered the manor, defeated the ghost and increased their sanity to over 100.",
-                    "statuses": null,
+                    "status_ids": null,
                     "status_thresholds": null,
                     "subgoals": [
                         {

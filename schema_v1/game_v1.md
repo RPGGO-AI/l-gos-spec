@@ -136,8 +136,8 @@ Introduction of the game, where creators can include information for players. Th
 Contains information about the goals for the chapter. This includes two goals which are `success_goal` and `fail_goal`, also `goal_setting` which is a dictionary for meta information for goals.
 [Further Check on GoalInfo](./goal_v1.md)
 
-#### `statuses`
-An array of `Status` objects, representing the numerical values or statuses that are tracked or affected by the chapter's events.
+#### `status_ids`
+An array of status's id, representing the numerical values or statuses that are tracked or affected by the chapter's events.
 [Further Check on Status](./goal_v1.md)
 
 #### `endings`
