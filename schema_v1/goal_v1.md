@@ -17,21 +17,22 @@ enum StatusType {
 interface Status {
     id: string;
     name: string;
-    affiliation?: CharacterCard; // Optional depending on the affiliationType
-    affiliationType: StatusType;
+    affiliation_id?: string; // Optional depending on the affiliationType
+    affiliation_type: StatusType;
     value: number;
 }
 
 interface Goal {
     id: string;
     description: string;
-    statuses: Status[]; // Optional depending on the goal
+    status_ids: string[]; // Optional depending on the goal
     status_thresholds: number[]; // Optional depending on the goal
     subgoals: Goal[]; // Optional depending on the goal
 }
 
 interface GoalInfo {
-    goals: Goal[];
+    success_goal: Goal;
+    fail_goal: Goal;
     goal_setting: Record<string, any>; // Meta information for goals
 }
 ```
@@ -49,7 +50,7 @@ class StatusType(Enum):
 class Status(BaseModel):
     id: str
     name: str
-    affiliation: Optional[CharacterCard]  # Optional depending on the affiliationType
+    affiliation_id: Optional[str]  # Optional depending on the affiliationType
     affiliation_type: StatusType
     value: int
     
@@ -57,13 +58,13 @@ class Status(BaseModel):
 class Goal(BaseModel):
     id: str
     description: str
-    statuses: Optional[list[Status]]  # Optional depending on the goal
+    status_ids: Optional[str]  # Optional depending on the goal
     status_thresholds: Optional[list[int]]  # Optional depending on the goal
     subgoals: Optional[list[Goal]]  # Optional depending on the goal
 
     
 class GoalInfo(BaseModel):
-    sucess_goal: Goal
+    success_goal: Goal
     fail_goal: Goal
-    goal_setting: dict # Meta information for goals
+    goal_setting: dict  # Meta information for goals
 ```

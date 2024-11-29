@@ -70,8 +70,77 @@
                     "personal_setting": ""
                 }
             ],
-            "goal_info": [...],
-            "statuses": [...],
+            "goal_info": {
+                "success_goal": {
+                    "id": "L0L3MLQ6",
+                    "description": "The player has successfully entered the manor, defeated the ghost and increased their sanity to over 100.",
+                    "statuses": null,
+                    "status_thresholds": null,
+                    "subgoals": [
+                        {
+                            "id": "L0Op3LQ6",
+                            "description": "The player successfully entered the manor.",
+                            "status_ids": null,
+                            "status_thresholds": null,
+                            "subgoals": null
+                        },
+                        {
+                            "id": "L9L0DLP2",
+                            "description": "The player defeated the ghost.",
+                            "status_ids": null,
+                            "status_thresholds": null,
+                            "subgoals": null
+                        },
+                        {
+                            "id": "L1KS93E3",
+                            "description": "The player increased the sanity to over 100.",
+                            "status_ids": ["status1"],
+                            "status_thresholds": [100],
+                            "subgoals": null
+                        }
+                    ]
+                },
+                "fail_goal": {
+                    "id": "6N2M8W95",
+                    "description": "The player's sanity or health has dropped to 0 or Thompson's sanity or health has dropped to 0.",
+                    "status_id": ["status1", "status2", "status3", "status4"],
+                    "status_threshold": [0, 0, 0, 0],
+                    "subgoals": null
+                },
+                "goal_setting": {
+                    "no_goal": false
+                }
+            },
+            "statuses": [
+                {
+                    "id": "status1",
+                    "name": "Sanity",
+                    "affiliation_id": null,
+                    "affiliation_type": "player",
+                    "value": 30
+                },
+                {
+                    "id": "status2",
+                    "name": "Health",
+                    "affiliation_id": null,
+                    "affiliation_type": "player",
+                    "value": 50
+                },
+                {
+                    "id": "status3",
+                    "name": "Sanity",
+                    "affiliation_id": "CBXL5LS17",
+                    "affiliation_type": "npc",
+                    "value": 30
+                },
+                {
+                    "id": "status4",
+                    "name": "Health",
+                    "affiliation_id": "CBXL5LS17",
+                    "affiliation_type": "npc",
+                    "value": 50
+                }
+            ],
             "endings": "The kids had entered the manor and defeated the ghost! good job everyone! players can now go to the basement formerly guarded by Malcom.",
             "characters": [
                 {
