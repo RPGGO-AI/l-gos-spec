@@ -295,8 +295,56 @@
                     "personal_setting": ""
                 }
             ],
-            "goal_info": [...],
-            "statuses": [...],
+            "goal_info": {
+                "success_goal": {
+                    "id": "KLSXDIEL",
+                    "description": "Entered the final room and got the Sacred Mars bar",
+                    "status_ids": null,
+                    "status_thresholds": null,
+                    "subgoals": [
+                        {
+                            "id": "XKDLDSEF",
+                            "description": "The player successfully entered the final room.",
+                            "status_ids": null,
+                            "status_thresholds": null,
+                            "subgoals": null
+                        },
+                        {
+                            "id": "LOCK9I2K",
+                            "description": "The player got the Sacred Mars bar.",
+                            "status_ids": null,
+                            "status_thresholds": null,
+                            "subgoals": null
+                        }
+                    ]
+                },
+                "fail_goal": {
+                    "id": "6N2M8W95",
+                    "description": "The player's sanity or health has dropped to 0",
+                    "status_id": ["status1", "status2"],
+                    "status_threshold": [0, 0],
+                    "subgoals": null
+                },
+                "goal_setting": {
+                    "no_goal": false
+                }
+            },
+            "statuses": [
+                {
+                    "id": "status1",
+                    "name": "Sanity",
+                    "affiliation_id": null,
+                    "affiliation_type": "player",
+                    "value": 30
+                },
+                {
+                    "id": "status2",
+                    "name": "Health",
+                    "affiliation_id": null,
+                    "affiliation_type": "player",
+                    "value": 50
+                }
+            ],
             "endings": "You got the Sacred Mars bar! this will unlock the throne room!",
             "characters": [
                 {
@@ -438,8 +486,41 @@
                     "personal_setting": ""
                 }
             ],
-            "goal_info": [...],
-            "statuses": [...],
+            "goal_info": {
+                "success_goal": {
+                    "id": "LEOSKDKS",
+                    "description": "Reach the final level, meet the Pumpkin King",
+                    "status_ids": null,
+                    "status_thresholds": null,
+                    "subgoals": null
+                },
+                "fail_goal": {
+                    "id": "6N2M8W95",
+                    "description": "The player's sanity or health has dropped to 0",
+                    "status_id": ["status1", "status2"],
+                    "status_threshold": [0, 0],
+                    "subgoals": null
+                },
+                "goal_setting": {
+                    "no_goal": false
+                }
+            },
+            "statuses": [
+                {
+                    "id": "status1",
+                    "name": "Sanity",
+                    "affiliation_id": null,
+                    "affiliation_type": "player",
+                    "value": 30
+                },
+                {
+                    "id": "status2",
+                    "name": "Health",
+                    "affiliation_id": null,
+                    "affiliation_type": "player",
+                    "value": 50
+                }
+            ],
             "endings": "After the sermon of life.\n\n“Each Halloween, you carry a piece of this night with you. Remember, the end is but a new beginning. Embrace it.” As he waves his hand, a cascade of candies rains down upon them, filling their bags to the brim. The children are overwhelmed with joy and gratitude, knowing they have experienced something extraordinary. As they prepare to leave the mansion, the Pumpkin Lord’s final words linger in the air: “May your hearts be forever light, and your spirits never dim.”\n\nThe trio steps out into the crisp Halloween night, pockets full of sweets and hearts full of newfound wisdom, knowing they will carry the memory of this adventure with them for years to come.",
             "characters": [
                 {
