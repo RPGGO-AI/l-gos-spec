@@ -71,19 +71,19 @@ class GoalInfo(BaseModel):
 
 ### Goal
 #### `id`
-The unique identifier of the goal.
+The unique identifier of the goal. (Required)
 
 #### `description`
-The description of the goal.
+The concise description of the goal. (Required)
 
 #### `status_ids`
-The list of status IDs that the goal is associated with. Optional depending on the goal.
+The list of status IDs that the goal is associated with. (Optional depending on the goal)
 
 #### `status_thresholds`
-The list of status thresholds that the goal is associated with. When the status value reaches the threshold, the goal is achieved. Optional depending on the goal.
+The list of status thresholds that the goal is associated with. When all the status value reaches the threshold, the goal is achieved. (Optional depending on the goal)
 
 #### `subgoals`
-The list of subgoals that the goal is broken down into. Optional depending on the goal.
+The list of subgoals that the goal is broken down into. (Optional depending on the goal)
 
 ### GoalInfo
 #### `success_goal`
@@ -97,17 +97,17 @@ Meta information for goals.
 
 ### Status
 #### `id`
-The unique identifier of the status.
+The unique identifier of the status. (Required)
 
 #### `name`
-The name of the status.
+The name of the status. (Required)
 
 #### `affiliation_id`
-The unique identifier of the affiliation. Required only when `affiliation_type` is `npc`.
+The unique identifier of the affiliation. (Required only when `affiliation_type` is `npc`)
 
 #### `affiliation_type`
-The type of affiliation. It can be `player`, `game`, or `npc`.
+The type of affiliation. It can be `player`, `game`, or `npc`. (Required)
 
 #### `value`
-The value of the status.
+The value of the status. (Required)
 
