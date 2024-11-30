@@ -68,3 +68,46 @@ class GoalInfo(BaseModel):
     fail_goal: Goal
     goal_setting: dict  # Meta information for goals
 ```
+
+### Goal
+#### `id`
+The unique identifier of the goal.
+
+#### `description`
+The description of the goal.
+
+#### `status_ids`
+The list of status IDs that the goal is associated with. Optional depending on the goal.
+
+#### `status_thresholds`
+The list of status thresholds that the goal is associated with. When the status value reaches the threshold, the goal is achieved. Optional depending on the goal.
+
+#### `subgoals`
+The list of subgoals that the goal is broken down into. Optional depending on the goal.
+
+### GoalInfo
+#### `success_goal`
+The goal that allows the player to progress to the next chapter.
+
+#### `fail_goal`
+The goal that results in the game ending if failed.
+
+#### `goal_setting`
+Meta information for goals.
+
+### Status
+#### `id`
+The unique identifier of the status.
+
+#### `name`
+The name of the status.
+
+#### `affiliation_id`
+The unique identifier of the affiliation. Required only when `affiliation_type` is `npc`.
+
+#### `affiliation_type`
+The type of affiliation. It can be `player`, `game`, or `npc`.
+
+#### `value`
+The value of the status.
+
