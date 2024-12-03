@@ -2,7 +2,7 @@
 
 ![Goose](https://github.com/user-attachments/assets/dc2c4123-1729-4065-ac26-bec60ad0a22b)
 
-I pronunce 'L-GOS' as "Large Goose" :)
+I pronounce 'L-GOS' as "Large Goose" :)
 
 
 ## 💡 Vision
@@ -46,7 +46,7 @@ L-GOS-SPEC/ <br>
 
 Briefly, the schema contains 3 levels:
 - Game, the data structure for running a complete game with LLM. One game can contain many characters.
-- Character, the data structure for runnig a single character with LLM. One character can contain many modules
+- Character, the data structure for running a single character with LLM. One character can contain many modules
 - Module, like Lego blocks, designed to enhance the expression and performance of characters and the game itself.
 
 ![game_module](/image/game_module.png)
