@@ -1,0 +1,25 @@
+{
+    "module_id": "MMCZMC47K",
+    "name": "Current world setting",
+    "cover_url": "xxx.jpg",
+    "category": "World Knowledge",
+    "creator": "Anonymous",
+    "intro": "The mundane, real-world setting describes ordinary, contemporary environments and situations as they exist in the 2020s. focuses on providing a realistic depiction of everyday life, highlighting the typical features and experiences of modern Earth.",
+    "entries": [
+        {
+            "entry_id": "mNcqbpQCh",
+            "keys": ["culture"],
+            "content": "A blend of globalized and localized traditions, where technology, media, and travel allow cultural exchanges to flourish. People are deeply connected through the internet, yet still hold onto regional customs, cuisine, and languages that define their identities."
+        },
+        {
+            "entry_id": "oVjKi9jUE",
+            "keys": ["Nations"],
+            "content": "Countries exist as political entities with diverse governing systems, economies, and international relations. Power dynamics are shaped by historical alliances, trade agreements, and technological advancements, creating a complex web of diplomacy and conflict."
+        },
+        {
+            "entry_id": "qrLmn3i1M",
+            "keys": ["Religions"],
+            "content": "Religious diversity is vast, with major world religions coexisting alongside secular beliefs and spiritual practices. Faith plays varying roles in people’s lives, from deeply personal connections to community-driven practices, influencing ethics, traditions, and worldviews."
+        }
+    ]
+}

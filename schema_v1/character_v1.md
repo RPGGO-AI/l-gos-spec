@@ -7,8 +7,9 @@ This exists for reference in case of ambiguity, or for future new implementers.
 
 - [Embedding methods](#embedding-methods)
 - [Fields](#fields)
+  * [character_id](#character_id)
   * [name](#name)
-  * [avatar](#avatar)
+  * [avatar_url](#avatar_url)
   * [appearance](#appearance)
   * [background](#background)
   * [opening_line](#opening_line)
@@ -24,7 +25,7 @@ This exists for reference in case of ambiguity, or for future new implementers.
 ## Embedding methods
 
 - .json file with no image. Discouraged for user-friendliness.
-- PNG/APNG: JSON string encoded in base64 inside the "MOD" EXIF metadata field. Highly recommended for better user-friendliness.
+- PNG/APNG: JSON string encoded in base64 inside the "CHAR" EXIF metadata field. Highly recommended for better user-friendliness.
 
 
 ## Fields
@@ -33,8 +34,9 @@ The current format can be represented as this TypeScript type:
 
 ```ts
 type CharacterCard = {
+    character_id: string;
     name: string;
-    avatar: string;
+    avatar_url: string;
     appearance: string;
     background: string;
     opening_line: string;
@@ -50,19 +52,22 @@ type CharacterCard = {
 
 also with Python definition:
 ```python
+from pydantic import BaseModel, Field
+
 class CharacterCard(BaseModel):
+    character_id: str = ""
     name: str = ""
-    avatar: str = ""
+    avatar_url: str = ""
     appearance: str = ""
     background: str = ""
     opening_line: str = ""
     creator: str = ""
     creator_notes: str = ""
     intro: str = ""
-    traits: list[str] = []
-    tone: list[str] = []
-    tags: list[str] = []                           
-    modules: list[Module] = []
+    traits: list[str] = Field(default_factory=list)
+    tone: list[str] = Field(default_factory=list)
+    tags: list[str] = Field(default_factory=list)                          
+    modules: list[Module] = Field(default_factory=list)
 ```
 
 All fields are mandatory and **MUST** default to the empty string/list, not null or absent/undefined.
@@ -77,10 +82,20 @@ Whether {{user}} and `<USER>` should be replaced inside the `name` field is an *
 
 Details for each field follows.
 
+### `character_id`
+A unique identifier for the character. The `character_id` is generated using the following logic:
+
+- **ID_ALPHABET**: A predefined set of characters consisting of `0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ`.
+- The ID **MUST** start with the prefix `C` followed by 8 randomly selected characters from `ID_ALPHABET`.
+
+This ID ensures uniqueness and **MUST** be immutable once assigned.
+example: C4E25YTLT
+
+[Check all id rules here](/id_spec.md)
 ### `name`
 Used to identify a character.
 
-### `avatar`
+### `avatar_url`
 The URL or path to the character's avatar image.
 
 ### `appearance`
@@ -116,7 +131,7 @@ An array of modules, like building blocks, designed to enhance the expression an
 
 [Further Check on module](./module_v1.md)
 
-![373492583-0f9de6a9-1671-4eb6-91c4-2588aba9aa75](https://github.com/user-attachments/assets/0a67748d-1982-401c-86e4-bf9f013ed2d8)
+![character_module](/image/character_module.png)
 
 
 

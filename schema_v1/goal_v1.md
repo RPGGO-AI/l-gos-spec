@@ -17,26 +17,29 @@ enum StatusType {
 interface Status {
     id: string;
     name: string;
-    affiliation?: CharacterCard; // Optional depending on the affiliationType
-    affiliationType: StatusType;
+    affiliation_id?: string; // Optional depending on the affiliationType
+    affiliation_type: StatusType;
     value: number;
 }
 
 interface Goal {
     id: string;
     description: string;
-    statuses: Status[]; // Optional depending on the goal
+    status_ids: string[]; // Optional depending on the goal
     status_thresholds: number[]; // Optional depending on the goal
     subgoals: Goal[]; // Optional depending on the goal
 }
 
 interface GoalInfo {
-    goals: Goal[];
+    success_goal: Goal;
+    fail_goal: Goal;
     goal_setting: Record<string, any>; // Meta information for goals
 }
 ```
 or as this python definition:
 ```python
+from pydantic import BaseModel, Field
+
 class StatusType(Enum):
     player = "player"
     game = "game"
@@ -47,7 +50,7 @@ class StatusType(Enum):
 class Status(BaseModel):
     id: str
     name: str
-    affiliation: Optional[CharacterCard]  # Optional depending on the affiliationType
+    affiliation_id: Optional[str]  # Optional depending on the affiliationType
     affiliation_type: StatusType
     value: int
     
@@ -55,13 +58,56 @@ class Status(BaseModel):
 class Goal(BaseModel):
     id: str
     description: str
-    statuses: Optional[list[Status]]  # Optional depending on the goal
+    status_ids: Optional[str]  # Optional depending on the goal
     status_thresholds: Optional[list[int]]  # Optional depending on the goal
     subgoals: Optional[list[Goal]]  # Optional depending on the goal
 
     
 class GoalInfo(BaseModel):
-    sucess_goal: Goal
+    success_goal: Goal
     fail_goal: Goal
-    goal_setting: dict # Meta information for goals
+    goal_setting: dict  # Meta information for goals
 ```
+
+### Goal
+#### `id`
+The unique identifier of the goal. (Required)
+
+#### `description`
+The concise description of the goal. (Required)
+
+#### `status_ids`
+The list of status IDs that the goal is associated with. (Optional depending on the goal)
+
+#### `status_thresholds`
+The list of status thresholds that the goal is associated with. When all the status value reaches the threshold, the goal is achieved. (Optional depending on the goal)
+
+#### `subgoals`
+The list of subgoals that the goal is broken down into. (Optional depending on the goal)
+
+### GoalInfo
+#### `success_goal`
+The goal that allows the player to progress to the next chapter.
+
+#### `fail_goal`
+The goal that results in the game ending if failed.
+
+#### `goal_setting`
+Meta information for goals.
+
+### Status
+#### `id`
+The unique identifier of the status. (Required)
+
+#### `name`
+The name of the status. (Required)
+
+#### `affiliation_id`
+The unique identifier of the affiliation. (Required only when `affiliation_type` is `npc`)
+
+#### `affiliation_type`
+The type of affiliation. It can be `player`, `game`, or `npc`. (Required)
+
+#### `value`
+The value of the status. (Required)
+
