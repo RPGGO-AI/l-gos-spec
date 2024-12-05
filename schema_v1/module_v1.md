@@ -92,9 +92,6 @@ Introduction of the module, where creators can include information to player, an
 ### `category`
 Used to identify the usage purpose of a module. It **MUST** be one of the following values:
 
-### `cover_url`
-The URL or path to the Module's cover image.
-
 ```ts
 enum Module_Category {
   World_Knowledge = 'World Knowledge',     
@@ -117,19 +114,22 @@ where,
 - User_Persona - Identify the module as additional details of AI character's personality
 - Others - Used if the module cannot be identified by previous options.
 
+### `cover_url`
+The URL or path to the Module's cover image.
+
 ### `entries`
-The prompt set to be sent to the AI.
+The prompt set to be sent to the bots.
 
 Each entry contains :
 - entry_id, which is a unique identifier for each entry within a module. The `entry_id` is generated using the **nanoid** library with a length of 9 characters. Nanoid generates a compact, random, and URL-friendly ID that minimizes collisions while being concise.
-- keys, which is used as tags to identify the following content, which **MAY** be used for searching
+- keys, which is used as tags to identify the following content, which **MAY** be used for searching, or the retrieval of the `content`.
 - content, which is the real prompt. 
-**Note** In prompts sent to the AI, the fields `content` **MUST** replace the following magic strings, with a **case-insensitive** search (e.g. `<BOT>` and `<bot>` both work):
-- {{char}} or `<BOT>` to the name of the character which is applied with this module
+**Note** In prompts sent to the bots, the fields `content` **MUST** replace the following magic strings, with a **case-insensitive** search (e.g. `<BOT>` and `<bot>` both work):
+- {{char}} or `<BOT>` to the name of the character which is applied with this module.
 - {{user}} or `<USER>` to the game player's set display name.
 
 some examples of the entry:
-- "resume, profile, childhood": "{{char}} is borned in United States and currently 19 years old, blablabla"
-- "secret, tone": "{{char}} should use a gentle, alluring tone, which makes other feel there are some secrets hided"
+- ["resume", "profile", "childhood"]: "{{char}} was born in United States and is currently 19 years old, has special feelings for {user}."
+- ["secret", "tone"]: "{{char}} should use a gentle, alluring tone, which makes others feel there are some secrets hided."
 
 ![module_entry](/image/module_entry.png)

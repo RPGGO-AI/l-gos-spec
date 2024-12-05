@@ -54,7 +54,7 @@ type Chapter = {
     init_dialogues: InitDialogue[];
     lore_list: Lore[];
     character_info: CharacterInfo[];
-    characters: Character[];   
+    characters: CharacterCard[];   
 };
 
 type Game = {
@@ -88,7 +88,7 @@ class Chapter(BaseModel):
     init_dialogues: list[InitDialogue] = Field(default_factory=list)
     lore_list: list[Lore] = Field(default_factory=list)
     character_info: list[CharacterInfo] = Field(default_factory=list)
-    characters: list[Character] = Field(default_factory=list)
+    characters: list[CharacterCard] = Field(default_factory=list)
     
 class Game(BaseModel):
     game_id: str = ""
