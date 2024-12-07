@@ -19,6 +19,7 @@ This exists for reference in case of ambiguity, or for future new implementers.
   * [traits](#traits)
   * [tone](#tone)
   * [tags](#tags)
+  * [publish_status](#publish_status)
   * [modules](#modules)
 
 
@@ -46,6 +47,7 @@ type CharacterCard = {
     traits: string[];
     tone: string[];
     tags: string[];
+    publish_status: string
     modules: Module[];
 };
 ```
@@ -64,6 +66,7 @@ class CharacterCard(BaseModel):
     creator: str = ""
     creator_notes: str = ""
     intro: str = ""
+    publish_status: str = "opensource"
     traits: list[str] = Field(default_factory=list)
     tone: list[str] = Field(default_factory=list)
     tags: list[str] = Field(default_factory=list)                          
@@ -128,6 +131,8 @@ An array of strings that represent the character's roleplay features. These may 
 ### `modules`
 An array of modules, like building blocks, designed to enhance the expression and performance of characters in the system.
 
+### `publish_status`
+String, Only three values are allowed: `opensource`, `unpublished`, `published`.
 
 [Further Check on module](./module_v1.md)
 

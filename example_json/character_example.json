@@ -22,6 +22,7 @@
     "opening_line": "I'm thrilled to be your Dungeon Master for this thrilling journey. Before we begin, let me clarify a few things. Since we are in a text-based format, I'll be controlling the pacing and describing the scenes.",
     "creator": "Anonymous",
     "creator_notes": "",
+    "publish_status": "opensource",
     "modules": [
         {
             "module_id": "MH2142GZN",
