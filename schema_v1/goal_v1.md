@@ -22,11 +22,15 @@ interface Status {
     value: number;
 }
 
+interface StatusConf {
+    status_id: string;
+    status_threshold: number; // Use float or int depending on your specific needs
+}
+
 interface Goal {
     id: string;
     description: string;
-    status_ids: string[]; // Optional depending on the goal
-    status_thresholds: number[]; // Optional depending on the goal
+    status_confs?: StatusConf[]; // Optional depending on the goal
     subgoals: Goal[]; // Optional depending on the goal
 }
 
@@ -45,7 +49,6 @@ class StatusType(Enum):
     game = "game"
     npc = "npc"
 
-
 # Basic unit of game numerical system
 class Status(BaseModel):
     id: str
@@ -53,15 +56,16 @@ class Status(BaseModel):
     affiliation_id: Optional[str]  # Optional depending on the affiliationType
     affiliation_type: StatusType
     value: int
-    
+
+class StatusConf(BaseModel):
+    status_id: str
+    status_threshold: float  # 使用 float 或 int，看你的具体需求
 
 class Goal(BaseModel):
     id: str
     description: str
-    status_ids: Optional[str]  # Optional depending on the goal
-    status_thresholds: Optional[list[int]]  # Optional depending on the goal
+    status_confs: Optional[list[StatusConf]]  # Optional depending on the goal
     subgoals: Optional[list[Goal]]  # Optional depending on the goal
-
     
 class GoalInfo(BaseModel):
     success_goal: Goal
@@ -76,11 +80,8 @@ The unique identifier of the goal. (Required)
 #### `description`
 The concise description of the goal. (Required)
 
-#### `status_ids`
-The list of status IDs that the goal is associated with. (Optional depending on the goal)
-
-#### `status_thresholds`
-The list of status thresholds that the goal is associated with. When all the status value reaches the threshold, the goal is achieved. (Optional depending on the goal)
+#### `status_confs`
+A list of StatusConf. It is used to specify the status and its threshold for the goal. (Optional depending on the goal)
 
 #### `subgoals`
 The list of subgoals that the goal is broken down into. (Optional depending on the goal)
@@ -94,6 +95,13 @@ The goal that results in the game ending if failed.
 
 #### `goal_setting`
 Meta information for goals.
+
+### StatusConf
+#### `status_id`
+ID of the status that the goal is associated with.
+
+#### `status_threshold`
+The threshold value of the status. When all the status value reach the threshold, the goal is achieved.
 
 ### Status
 #### `id`

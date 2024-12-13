@@ -74,28 +74,29 @@
                 "success_goal": {
                     "id": "L0L3MLQ6",
                     "description": "The player has successfully entered the manor, defeated the ghost and increased their sanity to over 100.",
-                    "status_ids": null,
-                    "status_thresholds": null,
+                    "status_confs": null,
                     "subgoals": [
                         {
                             "id": "L0Op3LQ6",
                             "description": "The player successfully entered the manor.",
-                            "status_ids": null,
-                            "status_thresholds": null,
+                            "status_confs": null,
                             "subgoals": null
                         },
                         {
                             "id": "L9L0DLP2",
                             "description": "The player defeated the ghost.",
-                            "status_ids": null,
-                            "status_thresholds": null,
+                            "status_confs": null,
                             "subgoals": null
                         },
                         {
                             "id": "L1KS93E3",
                             "description": "The player increased the sanity to over 100.",
-                            "status_ids": ["status1"],
-                            "status_thresholds": [100],
+                            "status_confs": [
+                                {
+                                    "status_id": "status1",
+                                    "status_threshold": 100
+                                }
+                            ],
                             "subgoals": null
                         }
                     ]
@@ -299,21 +300,18 @@
                 "success_goal": {
                     "id": "KLSXDIEL",
                     "description": "Entered the final room and got the Sacred Mars bar",
-                    "status_ids": null,
-                    "status_thresholds": null,
+                    "status_confs": null,
                     "subgoals": [
                         {
                             "id": "XKDLDSEF",
                             "description": "The player successfully entered the final room.",
-                            "status_ids": null,
-                            "status_thresholds": null,
+                            "status_confs": null,
                             "subgoals": null
                         },
                         {
                             "id": "LOCK9I2K",
                             "description": "The player got the Sacred Mars bar.",
-                            "status_ids": null,
-                            "status_thresholds": null,
+                            "status_confs": null,
                             "subgoals": null
                         }
                     ]
@@ -321,8 +319,16 @@
                 "fail_goal": {
                     "id": "6N2M8W95",
                     "description": "The player's sanity or health has dropped to 0",
-                    "status_id": ["status1", "status2"],
-                    "status_threshold": [0, 0],
+                    "status_confs": [
+                        {
+                            "status_id": "status1",
+                            "status_threshold": 0
+                        },
+                        {
+                            "status_id": "status2",
+                            "status_threshold": 0
+                        }
+                    ],
                     "subgoals": null
                 },
                 "goal_setting": {
@@ -490,15 +496,22 @@
                 "success_goal": {
                     "id": "LEOSKDKS",
                     "description": "Reach the final level, meet the Pumpkin King",
-                    "status_ids": null,
-                    "status_thresholds": null,
+                    "status_confs": null,
                     "subgoals": null
                 },
                 "fail_goal": {
                     "id": "6N2M8W95",
                     "description": "The player's sanity or health has dropped to 0",
-                    "status_id": ["status1", "status2"],
-                    "status_threshold": [0, 0],
+                    "status_confs": [
+                        {
+                            "status_id": "status1",
+                            "threshold": 0
+                        },
+                        {
+                            "status_id": "status2",
+                            "threshold": 0
+                        }
+                    ],
                     "subgoals": null
                 },
                 "goal_setting": {
