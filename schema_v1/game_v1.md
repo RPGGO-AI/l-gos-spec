@@ -17,7 +17,6 @@ This exists for reference in case of ambiguity, or for future new implementers.
     - [init_dialogues](#init_dialogues)
     - [lore_list](#lore_list)
     - [character_info](#character_info)
-    - [characters](#characters)
   - [Game Fields](#game-fields)
     - [game_id](#game_id)
     - [name](#name)
@@ -30,6 +29,8 @@ This exists for reference in case of ambiguity, or for future new implementers.
     - [chapters](#chapters)
     - [creator_id](#creator)
     - [background_musics](#background_musics)
+    - [characters](#characters)
+
 
 
     
@@ -181,8 +182,11 @@ type CharacterInfo = {
 ```
 
 #### `characters`
-An array of `Character` objects, representing the characters that are involved or featured in the chapter.
+~~An array of `Character` objects, representing the characters that are involved or featured in the chapter.~~
 [Further Check on Character](./character_v1.md)
+
+
+  An array of `Character` objects. It is used to represent all Characters in the game, which can be common in all chapters
 
 ---
 
