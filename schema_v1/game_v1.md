@@ -28,6 +28,7 @@ This exists for reference in case of ambiguity, or for future new implementers.
     - [background](#background-1)
     - [intro](#intro-1)
     - [chapters](#chapters)
+    - [creator_id](#creator)
     - [background_musics](#background_musics)
 
 
@@ -230,6 +231,9 @@ A short text or narrative that introduces the game to the player, setting the st
 
 #### `chapters`
 An array of `Chapter` objects, each representing a specific chapter in the game's storyline. 
+
+#### `creator`
+The user ID of the string type, which is not required and is not specified, is parsed using a token
 
 #### `background_musics`
 An array of strings representing background music tracks or themes used in the game. These may be used to set the mood or enhance gameplay.
