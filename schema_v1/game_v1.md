@@ -155,7 +155,7 @@ type InitDialogue = {
     name: string;              // The speaker or source of the dialogue
     index: number;             // The order of the dialogue in the sequence, which **Should** be the display order of frontend.
     message: string;           // The text content of the dialogue
-    character_id: string;      // The unique identifier for the character speaking
+    character_name: string;      // The unique identifier for the character speaking
 };
 ```
 
@@ -165,7 +165,7 @@ An array of `Lore` objects, providing additional narrative details and game-play
 ```ts
 type Lore = {
     details: string;           // lore text content
-    character_id: string[];    // Array of character IDs associated with the lore: "Who knows this lore".
+    character_name: string[];    // Array of character Names associated with the lore: "Who knows this lore".
 };
 ```
 
@@ -175,7 +175,7 @@ An array of `CharacterInfo` objects, providing in-depth details about the charac
 ```ts
 type CharacterInfo = {
     emotion: string;           // Current emotional state of the character
-    character_id: string;      // Unique identifier of the character
+    character_name: string;      // Unique identifier of the character
     recent_ongoing: string;    // Summary of the character's recent actions
     personal_setting: string;  // Additional context or personality details
 };
