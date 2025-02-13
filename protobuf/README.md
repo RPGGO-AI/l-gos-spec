@@ -4,8 +4,8 @@
 Download the latest version of protoc from the official website: https://github.com/protocolbuffers/protobuf/releases
 ## 2. Create protobuf/internal/xxx/entity
 ```
-mkdir -p protobuf/internal/go/entity
-mkdir -p protobuf/internal/pytho/entity
+mkdir -p protobuf/app/go/entity
+mkdir -p protobuf/app/pytho/entity
 ```
 ## 3. Generate go pb
 ```
@@ -13,14 +13,14 @@ protoc \
   --go_out=/protobuf \
   --proto_path=/protobuf/proto \
   --go_opt=module=protobuf \
-  --go_opt=Mgame.proto=protobuf/internal/go/entity \
+  --go_opt=Mgame.proto=protobuf/app/go/entity \
   /protobuf/proto/game.proto 
 ```
 ## 4. Generate python pb
 ### generate
 ```
  protoc \
-  --python_out=/protobuf/internal/python/entity \
+  --python_out=/protobuf/app/python/entity \
   --proto_path=/protobuf/proto \
   /protobuf/proto/game.proto
 ```

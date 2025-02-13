@@ -21,7 +21,6 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// 定义 Game 消息
 type Game struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
 	GameId           string                 `protobuf:"bytes,1,opt,name=game_id,proto3" json:"game_id,omitempty"`
