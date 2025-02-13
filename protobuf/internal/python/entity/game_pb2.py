@@ -12,15 +12,16 @@ from google.protobuf.internal import builder as _builder
 _sym_db = _symbol_database.Default()
 
 
+import chapter_pb2 as chapter__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\ngame.proto\x12\x04game\"\xaa\x01\n\x04Game\x12\x0f\n\x07game_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\tcover_url\x18\x03 \x01(\t\x12\x0c\n\x04lang\x18\x04 \x01(\t\x12\r\n\x05intro\x18\x05 \x01(\t\x12\x12\n\nbackground\x18\x06 \x01(\t\x12\x11\n\tgame_tags\x18\x07 \x03(\t\x12\x11\n\tmechanics\x18\x08 \x01(\t\x12\x19\n\x11\x62\x61\x63kground_musics\x18\t \x03(\tb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\ngame.proto\x12\x04game\x1a\rchapter.proto\"\xb4\x02\n\x04Game\x12\x18\n\x07game_id\x18\x01 \x01(\tR\x07game_id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x1c\n\tcover_url\x18\x03 \x01(\tR\tcover_url\x12\x12\n\x04lang\x18\x04 \x01(\tR\x04lang\x12\x14\n\x05intro\x18\x05 \x01(\tR\x05intro\x12\x1e\n\nbackground\x18\x06 \x01(\tR\nbackground\x12\x1c\n\tgame_tags\x18\x07 \x03(\tR\tgame_tags\x12\x1c\n\tmechanics\x18\x08 \x01(\tR\tmechanics\x12,\n\x11\x62\x61\x63kground_musics\x18\t \x03(\tR\x11\x62\x61\x63kground_musics\x12,\n\x08\x63hapters\x18\n \x03(\x0b\x32\x10.chapter.ChapterR\x08\x63haptersb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'game_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
-  _globals['_GAME']._serialized_start=21
-  _globals['_GAME']._serialized_end=191
+  _globals['_GAME']._serialized_start=36
+  _globals['_GAME']._serialized_end=344
 # @@protoc_insertion_point(module_scope)

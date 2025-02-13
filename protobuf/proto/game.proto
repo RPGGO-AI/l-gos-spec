@@ -1,19 +1,18 @@
-// Use proto3 syntax, use proto2 if not specified
 syntax = "proto3";
 
-// Generate the package path where the proto file is located
 package game;
 
+import "chapter.proto";
 
-// Define the response to user information
 message Game {
-  string game_id = 1;
-  string name = 2;
-  string cover_url = 3;
-  string lang = 4;
-  string intro = 5;
-  string background = 6;
-  repeated string game_tags = 7;
-  string mechanics = 8;
-  repeated string background_musics = 9;
+  string game_id = 1 [json_name = "game_id"];
+  string name = 2 [json_name = "name"];
+  string cover_url = 3 [json_name = "cover_url"];
+  string lang = 4 [json_name = "lang"];
+  string intro = 5 [json_name = "intro"];
+  string background = 6 [json_name = "background"];
+  repeated string game_tags = 7 [json_name = "game_tags"];
+  string mechanics = 8 [json_name = "mechanics"];
+  repeated string background_musics = 9 [json_name = "background_musics"];
+  repeated chapter.Chapter chapters = 10 [json_name = "chapters"];
 }

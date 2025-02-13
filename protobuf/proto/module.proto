@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package module;
+
+message Module {
+  string module_id = 1 [json_name = "module_id"];
+  string name = 2 [json_name = "name"];
+  string cover_url = 3 [json_name = "cover_url"];
+  string category = 4 [json_name = "category"];
+  string creator = 5 [json_name = "creator"];
+  string intro = 6 [json_name = "intro"];
+  repeated Entry entries = 7 [json_name = "entries"];
+}
+
+message Entry {
+  string entry_id = 1 [json_name = "entry_id"];
+  repeated string keys = 2 [json_name = "keys"];
+  string content = 3 [json_name = "content"];
+}
