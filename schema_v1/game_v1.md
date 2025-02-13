@@ -206,6 +206,40 @@ The title or name of the game.
 
 #### `game_tags`
 An array of strings that represent tags related to the game, typically used for sorting, categorizing, or filtering. These tags are case-insensitive.
+Below are all the optional game tabs, which can be used with negligible case:
+```ts
+"Love"
+"JRPG"
+"Detective"
+"Debate"
+"Drama"
+"Education"
+"Serious"
+"Manage"
+"Narration"
+"Cthulhu"
+"D&D"
+"History"
+"Myth"
+"Philosophy"
+"SCP"
+"War"
+"Cyberpunk"
+"Dark"
+"Fantasy"
+"Horror"
+"Isekai"
+"Magic"
+"Sci-Fi"
+"SuperNature"
+"Anime"
+"Yuri"
+"Yaoi"
+"OC"
+"Pet"
+"Non-human"
+"NSFW"
+```
 
 #### `mechanics`
 Field used to support and implement gameplay mechanics in the algorithm.
