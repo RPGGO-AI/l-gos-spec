@@ -1,0 +1,5 @@
+.idea/
+backend
+.DS_Store
+configs/bot.json
+.env

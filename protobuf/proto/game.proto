@@ -1,0 +1,19 @@
+// Use proto3 syntax, use proto2 if not specified
+syntax = "proto3";
+
+// Generate the package path where the proto file is located
+package game;
+
+
+// Define the response to user information
+message Game {
+  string game_id = 1;
+  string name = 2;
+  string cover_url = 3;
+  string lang = 4;
+  string intro = 5;
+  string background = 6;
+  repeated string game_tags = 7;
+  string mechanics = 8;
+  repeated string background_musics = 9;
+}
