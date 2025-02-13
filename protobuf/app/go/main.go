@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"protobuf/entity"
+	"github.com/RPGGO-AI/l-gos-spec/protobuf/app/go/entity"
 
 	"google.golang.org/protobuf/proto"
 )
