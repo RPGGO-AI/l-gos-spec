@@ -242,6 +242,7 @@ Below are all the optional game tabs, which can be used with negligible case:
 
 #### `mechanics`
 Field used to support and implement gameplay mechanics in the algorithm.
+Ignore case
 
 ```ts
 enum Mechanics {
