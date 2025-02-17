@@ -152,7 +152,6 @@ An array of InitDialogue objects that define the initial conversations that play
 This will overwrite the `opening_line` of the character.
 ```ts
 type InitDialogue = {
-    name: string;              // The speaker or source of the dialogue
     index: number;             // The order of the dialogue in the sequence, which **Should** be the display order of frontend.
     message: string;           // The text content of the dialogue
     character_name: string;      // The unique identifier for the character speaking
