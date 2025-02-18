@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package character;
+
+import "module.proto";
+
+message Character {
+  string character_id = 1 [json_name = "character_id"];
+  string name = 2 [json_name = "name"];
+  string avatar_url = 3 [json_name = "avatar_url"];
+  string background = 4 [json_name = "background"];
+  string appearance = 5 [json_name = "appearance"];
+  repeated string traits = 6 [json_name = "traits"];
+  repeated string tone = 7 [json_name = "tone"];
+  string intro = 8 [json_name = "intro"];
+  repeated string character_tags = 9 [json_name = "character_tags"];
+  string opening_line = 10 [json_name = "opening_line"];
+  string creator = 11 [json_name = "creator"];
+  string creator_notes = 12 [json_name = "creator_notes"];
+  string publish_status = 13 [json_name = "publish_status"];
+  repeated module.Module modules = 14 [json_name = "modules"];
+}

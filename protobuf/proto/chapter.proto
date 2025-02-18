@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package chapter;
+
+import "character.proto";
+
+message Chapter {
+  string chapter_id = 1 [json_name = "chapter_id"];
+  string name = 2 [json_name = "name"];
+  string cover_url = 3 [json_name = "cover_url"];
+  string background = 4 [json_name = "background"];
+  string intro = 5 [json_name = "intro"];
+  repeated Dialogue init_dialogue = 6 [json_name = "init_dialogue"];
+  repeated Lore lore_list = 7 [json_name = "lore_list"];
+  repeated CharacterInfo character_info = 8 [json_name = "character_info"];
+  GoalInfo goal_info = 9 [json_name = "goal_info"];
+  repeated Status statuses = 10 [json_name = "statuses"];
+  string endings = 11 [json_name = "endings"];
+  repeated character.Character characters = 12 [json_name = "characters"];
+}
+
+message Status {
+  string id = 1 [json_name = "id"];
+  string name = 2 [json_name = "name"];
+  string affiliation_id = 3 [json_name = "affiliation_id"];
+  string affiliation_type = 4 [json_name = "affiliation_type"];
+  int32 value = 5 [json_name = "value"];
+}
+
+message Goal {
+  string id = 1 [json_name = "id"];
+  string description = 2 [json_name = "description"];
+  repeated StatusConf status_confs = 3 [json_name = "status_confs"];
+  repeated Goal subgoals = 4 [json_name = "subgoals"];
+}
+
+message StatusConf {
+  string status_id = 1 [json_name = "status_id"];
+  int32 status_threshold = 2 [json_name = "status_threshold"];
+}
+
+message GoalSetting {
+  bool no_goal = 1 [json_name = "no_goal"];
+}
+
+message GoalInfo {
+  Goal success_goal = 1 [json_name = "success_goal"];
+  Goal fail_goal = 2 [json_name = "fail_goal"];
+  GoalSetting goal_setting = 3 [json_name = "goal_setting"];
+}
+
+message Dialogue {
+  string name = 1 [json_name = "name"];
+  int32 index = 2 [json_name = "index"];
+  string message = 3 [json_name = "message"];
+  string character_id = 4 [json_name = "character_id"];
+}
+
+message Lore {
+  string details = 1 [json_name = "details"];
+  repeated string character_id = 2 [json_name = "character_id"];
+}
+
+message CharacterInfo {
+  string emotion = 1 [json_name = "emotion"];
+  string character_id = 2 [json_name = "character_id"];
+  string recent_ongoing = 3 [json_name = "recent_ongoing"];
+  string personal_setting = 4 [json_name = "personal_setting"];
+}
