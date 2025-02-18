@@ -152,10 +152,9 @@ An array of InitDialogue objects that define the initial conversations that play
 This will overwrite the `opening_line` of the character.
 ```ts
 type InitDialogue = {
-    name: string;              // The speaker or source of the dialogue
     index: number;             // The order of the dialogue in the sequence, which **Should** be the display order of frontend.
     message: string;           // The text content of the dialogue
-    character_id: string;      // The unique identifier for the character speaking
+    character_name: string;      // The unique identifier for the character speaking
 };
 ```
 
@@ -165,7 +164,7 @@ An array of `Lore` objects, providing additional narrative details and game-play
 ```ts
 type Lore = {
     details: string;           // lore text content
-    character_id: string[];    // Array of character IDs associated with the lore: "Who knows this lore".
+    character_name: string[];    // Array of character Names associated with the lore: "Who knows this lore".
 };
 ```
 
@@ -175,7 +174,7 @@ An array of `CharacterInfo` objects, providing in-depth details about the charac
 ```ts
 type CharacterInfo = {
     emotion: string;           // Current emotional state of the character
-    character_id: string;      // Unique identifier of the character
+    character_name: string;      // Unique identifier of the character
     recent_ongoing: string;    // Summary of the character's recent actions
     personal_setting: string;  // Additional context or personality details
 };
@@ -206,9 +205,44 @@ The title or name of the game.
 
 #### `game_tags`
 An array of strings that represent tags related to the game, typically used for sorting, categorizing, or filtering. These tags are case-insensitive.
+Below are all the optional game tabs, which can be used with negligible case:
+```ts
+"Love"
+"JRPG"
+"Detective"
+"Debate"
+"Drama"
+"Education"
+"Serious"
+"Manage"
+"Narration"
+"Cthulhu"
+"D&D"
+"History"
+"Myth"
+"Philosophy"
+"SCP"
+"War"
+"Cyberpunk"
+"Dark"
+"Fantasy"
+"Horror"
+"Isekai"
+"Magic"
+"Sci-Fi"
+"SuperNature"
+"Anime"
+"Yuri"
+"Yaoi"
+"OC"
+"Pet"
+"Non-human"
+"NSFW"
+```
 
 #### `mechanics`
 Field used to support and implement gameplay mechanics in the algorithm.
+Ignore case
 
 ```ts
 enum Mechanics {
